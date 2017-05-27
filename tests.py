@@ -2,12 +2,16 @@
 
 
 import unittest
-import exacAlleleFreq
+import exacFunctionOutline
 
 
 class TestVcfFetch(unittest.TestCase):
     def test_fetch(self):
-        exacAlleleFreq.exacFetch('testExac.vcf.gz', 13, 32316434, 32316435)
+        alleleList = exacFunctionOutline.vcfFetchAlleles('testExac.vcf.gz', 13, 32319058, 32319059)
+        for allele in alleleList:
+            print vars(allele)
+            for subpop in allele.pops:
+                print vars(subpop)
     #def test_get(self):
         #exacAlleleFreq.getCountsNums(info)
 
