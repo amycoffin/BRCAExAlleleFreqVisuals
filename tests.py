@@ -2,12 +2,13 @@
 
 
 import unittest
-import exacFunctionOutline
+import exacVcfLibrary
+
 
 
 class TestVcfFetch(unittest.TestCase):
     def test_fetch(self):
-        alleleList = exacFunctionOutline.vcfFetchAlleles('testExac.vcf.gz', 13, 32319058, 32319059)
+        alleleList = exacVcfLibrary.vcfFetchAlleles('testExac.vcf.gz', 13, 32319058, 32319059)
         for allele in alleleList:
             print vars(allele)
             for subpop in allele.pops:
