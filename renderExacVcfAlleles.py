@@ -49,17 +49,15 @@ def makePlottingVectors(allele):
 def calcAFs(subpop):
     """Given a subpop, will generate a tuple of (Name, AF)"""
     ac = float(subpop.ac)
-    print ac
     an = float(subpop.an)
-    print an
     af = (ac/an)
     spTup = (subpop.popname, af)
     print spTup
     return spTup
 
 
-chrom = 13
-start = 32316434
-end = 32316435
+# chrom = 13
+# start = 32316434
+# end = 32316435
 #exacVcfLibrary.vcfFetchAlleles('testExac.vcf.gz', chrom, start, end)
 
