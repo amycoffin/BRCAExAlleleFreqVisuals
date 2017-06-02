@@ -20,11 +20,15 @@ def plotAllele(allele, figureNum):
     vectorTup = makePlottingVectors(allele)
     labels = vectorTup[0]
     AFs = vectorTup[1]
-    print AFs
+    sigLine = [0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]
     xAlign = np.arange(len(labels))
-    fig = plt.figure()
-    ax1 = plt.subplot2grid((1,1), (0,0))
-    ax1.bar(xAlign, AFs, label= 'Bars1', color='salmon')
+    fig, ax = plt.subplots()
+    ax.bar(xAlign, AFs, color='salmon')
+    ax.plot(xAlign, sigLine, color = 'black')
+    ax.set_ylabel('Allele Frequencies')
+    ax.set_xticks(xAlign) #this is the line that made a difference for label alignment
+    ax.set_xticklabels(labels)
+    ax.set_ylim((0,1))
     plt.show()
 
 def makePlottingVectors(allele):
