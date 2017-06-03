@@ -49,8 +49,6 @@ def vcfAltToAllele(vcfrec, altindex):
         for popname in popList:
             subpop = TgVcfToSubpop(vcfrec, altindex, popname)
             allele.pops.append(subpop)
-            print 'tgsuppop worked'
-
     return allele
 
 def vcfRecToPopNames(vcfrec):
